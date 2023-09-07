@@ -9,11 +9,15 @@ let xAttemps = 1
 // Events
 btnTry.addEventListener("click", handleTryClick)
 btnReset.addEventListener("click", handleResetClick)
+
 document.addEventListener("keydown", function (e) {
+
     if (e.key == "Enter" && screenOne.classList.contains("hide")) {
         handleResetClick()
     }
+
 })
+
 
 // Callback function
 function handleTryClick(event) {
@@ -22,7 +26,9 @@ function handleTryClick(event) {
 
     if (Number(inputNumber.value) == randomNumber) {
         handleToggleScreen()
-        screenTwo.innerText = `Você acertou em ${xAttemps} tentativas`
+        screenTwo.querySelector("h2").innerText = `Você acertou em ${xAttemps} tentativas`
+
+
     }
 
     inputNumber.value = ""
